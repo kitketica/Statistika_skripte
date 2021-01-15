@@ -7,10 +7,7 @@ output:
 
 **Varijable:** 
 
-```{r}
-#prva tablica
-```
-
+![varijable](Varijable.PNG)
 
 Za kolokvij je samo bitno znati za varijable:
 _Numeričke_ – brojevi 
@@ -49,9 +46,7 @@ _Apsolutno odstupanje od medijana_ – tipično (tj. srednje) odstupanje od sred
 
 **Raspodjele:**
 
-```{r}
-#slike 
-```
+![raspodjele](Raspodjele.png)
 
 
 1.	Ako postoji više izuzetno velikih vrijednosti od izuzetno malih (desna ploča) kažemo da su podaci _pozitivno iskrivljeni_
@@ -66,22 +61,29 @@ _Apsolutno odstupanje od medijana_ – tipično (tj. srednje) odstupanje od sred
 
 _Pregled numeričke varijable_
 
-summary( object = afl.margins ) # Deskriptivna stat
+```{r}
+#summary( object = afl.margins ) # Deskriptivna stat
 #>    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 #>    0.00   12.75   30.50   35.30   50.50  116.00
                       
+```
+
+
 Daje nam prilično dobru zbirku opisne statistike povezane sa središnjom tendencijom i širenjem podataka. - min + max = raspon; prvi i treći kvartil – interkvartilno raspršenje
 
 **Logička varijabla**
 
 _Pregled logičke varijable_
 
-ekstremi <-  afl.margins > 50 # Stvori log varijablu
-head(ekstremi,5) # Pogledaj podatke
+```{r}
+#ekstremi <-  afl.margins > 50 # Stvori log varijablu
+#head(ekstremi,5) # Pogledaj podatke
 #> [1]  TRUE FALSE  TRUE FALSE FALSE
-summary(ekstremi) # Deskriptivna stat
+#summary(ekstremi) # Deskriptivna stat
 #>    Mode   FALSE    TRUE 
 #> logical     132      44
+
+```
 
 *True ili fals je rezultat uvjeta „>50“
 
@@ -91,10 +93,13 @@ U  ovom kontekstu, funkcija „summary ()“ daje nam broj broja istinitih vrije
 
 _Pregled tekstualne/faktorske varijable_
 
-txt <- as.character( afl.finalists ) # Stvori txt var
-summary( object = txt ) # Deskriptivna stat
+```{r}
+#txt <- as.character( afl.finalists ) # Stvori txt var
+#summary( object = txt ) # Deskriptivna stat
 #>    Length     Class      Mode 
 #>       400 character character
+```
+
 
 *Lista 400 tekstualnih objekata/stringova
 
@@ -102,14 +107,19 @@ Ovo je jedna od onih situacija u kojima je korisno izjaviti svoju nominalnu vari
 
 **Deskriptivna statistika na podatkovnom skupu (data frame):**
 
+```{r}
 #>    -- Name --   -- Class --   -- Size --
 #>    effort       data.frame    10 x 2     -> 10 redaka, 2 stupca
 #>     $hours      numeric       10        
 #>     $grade      numeric       10
+```
+
 
 **Deksriptivna statistika na podatkovnom okviru:**
 
 summary(clin.trial) # Desktiptivna stat
+
+```{r}
 #>        drug         therapy    mood.gain     
 #>  placebo :6   no.therapy:9   Min.   :0.1000  
 #>  anxifree:6   CBT       :9   1st Qu.:0.4250  
@@ -117,6 +127,8 @@ summary(clin.trial) # Desktiptivna stat
 #>                              Mean   :0.8833  
 #>                              3rd Qu.:1.3000  
 #>                              Max.   :1.8000
+```
+
 
 Tri su lijeka: placebo, nešto što se naziva "anxifree" i nešto što se zove "joyzepam"; bilo je po 6 ljudi koji su primali svaki lijek. Bilo je 9 osoba liječenih kognitivnim ponašanjem terapiji (CBT) i 9 osoba koje nisu imale psihološkog liječenja. I možemo vidjeti iz gledanja sažetak varijable mood.gain koja je kod većine ljudi pokazala porast raspoloženja (znači ".88)
 
@@ -124,32 +136,43 @@ Tri su lijeka: placebo, nešto što se naziva "anxifree" i nešto što se zove "
 
 _Deskriptivna statistika na podatkovnom skupu (data frame):_
 
+```{r}
 #>    -- Name --   -- Class --   -- Size --
 #>    effort       data.frame    10 x 2     -> 10 redaka, 2 stupca
 #>     $hours      numeric       10        
 #>     $grade      numeric       10
 
+```
+
 **Deksriptivna statistika na podatkovnom okviru**
 
 summary(clin.trial) # Desktiptivna stat
+
+```{r}
 #>        drug         therapy    mood.gain     
 #>  placebo :6   no.therapy:9   Min.   :0.1000  
 #>  anxifree:6   CBT       :9   1st Qu.:0.4250  
 #>  joyzepam:6                  Median :0.8500  
 #>                              Mean   :0.8833  
-#>                              3rd Qu.:1.3000  
+#>                              3rd Qu.:1.3000 
 #>                              Max.   :1.8000
+```
+
+
 Tri su lijeka: placebo, nešto što se naziva "anxifree" i nešto što se zove "joyzepam"; bilo je po 6 ljudi koji su primali svaki lijek. Bilo je 9 osoba liječenih kognitivnim ponašanjem terapiji (CBT) i 9 osoba koje nisu imale psihološkog liječenja. I možemo vidjeti iz gledanja sažetak varijable mood.gain koja je kod većine ljudi pokazala porast raspoloženja (znači ".88)
 
 **Alternativna funkcija**
 
 _Deksriptivna statistika na podatkovnom okviru_
 
-describe(clin.trial) # Desktiptivna stat/ druga funkcija
+```{r}
+#describe(clin.trial) # Desktiptivna stat/ druga funkcija
 #>           vars  n mean   sd median trimmed  mad min max range skew kurtosis se 
 #> drug*        1 18 2.00 0.84   2.00    2.00 1.48 1.0 3.0   2.0 0.00    -1.66 0.20
 #> therapy*     2 18 1.50 0.51   1.50    1.50 0.74 1.0 2.0   1.0 0.00    -2.11 0.12
 #> mood.gain    3 18 0.88 0.53   0.85    0.88 0.67 0.1 1.8   1.7 0.13    -1.44 0.13
+```
+
 
 •	vars – samo indeks: 1 za prvu varijablu, 2 za drugu varijablu itd.
 
@@ -181,9 +204,10 @@ describe(clin.trial) # Desktiptivna stat/ druga funkcija
 
 _Pregledaj grupirano prema terapiji_
 
-by(data = clin.trial, # Izvor podataka
-   INDICES = clin.trial$therapy, # Odredi grupiranje
-   FUN = summary) # Odredi funkciju
+```{r}
+#by(data = clin.trial, # Izvor podataka
+#  INDICES = clin.trial$therapy, # Odredi grupiranje
+#  FUN = summary) # Odredi funkciju
 #> clin.trial$therapy: no.therapy
 #>        drug         therapy    mood.gain     
 #>  placebo :3   no.therapy:9   Min.   :0.1000  
@@ -201,15 +225,18 @@ by(data = clin.trial, # Izvor podataka
 #>                              Mean   :1.044  
 #>                              3rd Qu.:1.300  
 #>                              Max.   :1.800
+```
+
 
 Ovo su samo izvučeni podatci iz testiranja.
 Na ovom pregledu možemo vidjeti koja je terapija bolje prošla. Prvi dio je uzorak s „no.therapy“ i vidimo određene rezultate. Drugi dio tj. „CBT“  ima bolje rezultate u odnosu na prvi dio. 
 
 _Pregledaj grupirano prema razlici u raspoloženju_
 
-aggregate(formula = mood.gain ~ drug + therapy, # Prikaz
-          data = clin.trial, # Podatci
-          FUN = mean) # AS
+```{r}
+#aggregate(formula = mood.gain ~ drug + therapy, # Prikaz
+#          data = clin.trial, # Podatci
+#          FUN = mean) # AS
 #>       drug    therapy mood.gain
 #> 1  placebo no.therapy  0.300000
 #> 2 anxifree no.therapy  0.400000
@@ -217,6 +244,8 @@ aggregate(formula = mood.gain ~ drug + therapy, # Prikaz
 #> 4  placebo        CBT  0.600000
 #> 5 anxifree        CBT  1.033333
 #> 6 joyzepam        CBT  1.500000
+
+```
 
 Ovo su grupirani podatci gdje se vidi da je „mood.gain“ veći kod testiranja s „CBD“ terapijom.
 Grupirane su kombinacije lijekova i njihovih terapija, tj. 3 lijeka i 2 terapije. Najveći mood.gain je postignut u slučaju korištenja lijeka joyzepam uz terapiju CBT.
@@ -231,14 +260,16 @@ Grupirane su kombinacije lijekova i njihovih terapija, tj. 3 lijeka i 2 terapije
 
 **Personov korelacijski koeficijent; standardizacija kovarijance** – koeficijent od -1 do 1 koji određuje jačinu korelacije dvije varijable
 
-```{r}
-#slika 
-```
+![korelacija](Korelacija.png)
 
 1.	r =0 nema korelacije 
+
 2.	r = 0.33 pozitivna korelacija ali slaba / r = -0.33 negativna korelacija, slaba
+
 3.	r = 0.66 pozitivna korelacija umjerena do jaka / r = -0.66 negativna korelacija, umjerena do jaka
+
 4.	r = 1 izrazito jaka pozitivna korelacija / r = -1 izrazito jaka negativna korelacija 
+
 Pozitivni broj označava pozitivnu korelaciju / minus (negativni broj) negativnu  
 
 **Spermanova korelacija** – bazira se na tome da se izmjeri dosljednost povezanosti između poredanih varijabli, a oblik povezanosti nije bitan. Slučajevi u kojima se koristi Spearmanov koficijent su npr. kada među varijablama ne postoji linearna povezanost, a nije moguće primijeniti odgovarajuću transformaciju kojom bi se povezanost prevela u linearnu. 
@@ -247,68 +278,49 @@ Pozitivni broj označava pozitivnu korelaciju / minus (negativni broj) negativnu
 
 **Histogram** – grafički prikaz učestalosti pojave rezultata između dviju granica koje definiraju skupinu. Služe za stjecanje ukupnog dojma o podatcima i najčešće se koriste kad imamo frekvenciju nekog podatka
 
-```{r}
-#slika
-```
+![histogram](Histogram.PNG)
 
 **Boxplot** – standardizirani način prikazivanja raspodjele podataka na temelju sažetka od pet brojeva („minimum“, prvi kvartil (Q1), medijan, treći kvartil (Q3) i „maksimum“). Može reći o izvanrednim situacijama i koje su njihove vrijednosti
 
-```{r}
-#slika s opisom 
-```
+![boxplot](Boxplot.PNG)
 
 **Dijagram rasipanja** – pokazuje jačinu korelacije tj. koliko jedna varijabla utječe na drugu, što 
 su podatci gušće raspodijeljeni korelacija je snažnija 
 
-```{r}
-#slika
-```
+![dijagram rasipanja](Dijagram rasipanja.png)
 
 ## Inferencijalna statistika
 
 **Inferencijalna statistika** – iz pojedinačnog slučaja (s uzorka) želimo zaključiti na neku pojavu koja je možda opći zakon 
 
-```{r}
-#tablica
-```
+![deskriptivna vs. inferencijalna](deskriptivna vs. inferencijalna.PNG)
 
 **Binomna distribucija** – broj ishoda u skupinama, Svaki stupac prikazuje vjerojatnost jednog ishoda (i.e., jedna moguća vrijednost (X)). Pošto je riječ o distribuciji vjerojatnosti, svaka od pojedinačnih vrijednosti mora biti broj od 0 do 1 dok zbroj svih stupaca mora biti jednak 1.
-```{r}
-#slika
-```
 
+![binomna distribucija](Binomna distribucija.png)
 
 **Standardna distribucija** – vrsta kontinuirane raspodjele vjerojatnosti za stvarnu vrijednost slučajne varijable. Služi za predstavljanje stvarnih vrijednosti slučajnih varijabli čija raspodjela nije poznata. Vrijedi zbog središnjeg graničnog teorema koji nalaže da pod nekim uvjetima, prosjek puno uzoraka (promatranja) slučajne varijable s konačnom sredinom i varijancom koja je po sebi slučajna varijabla - čija raspodjela konvergira u normalnu raspodjelu kako se povećava broj uzoraka
 
-```{r}
-#slika
-```
+![standardna distribucija](Standardna distribucija.PNG)
 
 **T-distribucija** – slična po izgledu standardnoj, ali ima „teže“ repove pa je teže označiti graničnu vrijednost. T-distribucija tj. distribucija t-izraza koja se dobiva kada se računski određuje standardna pogreška aritmetičke sredine, odnosno standardna pogreška razlike između aritmetičkih sredina a pri tome se u računu koristi standardna devijacija uzorka. 
-```{r}
-#slika
-```
+
+![t-distribucija](t-distribucija.png)
 
 
 **Chi-sq distribucija** – ishodi moraju biti veći od 0 i prilično je zakrivljena, koristi se kod raspodjele vjerojatnosti u inferencijalnoj statistici, posebno u ispitivanju hipoteza i u izgradnji intervala pouzdanosti
 
-```{r}
-#slika
-```
+![chi-sq distribucija](chi-sq distribucija.png)
 
 
 **F-distribucija**
 
-```{r}
-#slika
-```
+![f-distribucija](f-distribucija.png)
 
 
 **Sampling distribucija** – raspodjela uzoraka ili raspodjela konačnog uzorka je raspodjela vjerojatnosti zadane statistike na temelju slučajnog uzorka. Raspodjela uzoraka važna je u statistici jer pruža pojednostavljenje na putu do statističkog zaključivanja. Točnije, dopušta da se analitička razmatranja temelje na raspodjeli vjerojatnosti statistike, a ne na zajedničkoj raspodjeli vjerojatnosti svih pojedinačnih vrijednosti uzorka. 
 
-```{r}
-#slika
-```
+![sampling distribucija](Sampling distribucija.png)
 
 
 ## Uzorak vs. populacija
@@ -384,17 +396,12 @@ mehanizma za generiranje podataka
 -	Npr. „Postoji razlika u visini između Dalmatinaca i Zagoraca.“
 
 ## Vrste pogrešaka kod testiranja hipoteza: 
-```{r}
-#Slika i strelice
-```
+
+![vrste pogrešaka](Vrsta pogreške.PNG)
 
 ## Kritičke granice
 
-```{r}
-#slika 
-```
-
-
+![kritičke granice](Kriticke granice.png)
 Kritičko područje testa odgovara onim vrijednostima koje bi nas dovele do odbacivanja nulte hipoteze (zbog čega se kritična regija također naziva i regijom odbijanja).
 
 1. X bi trebao biti vrlo velik ili vrlo malen da bi odbacio nultu hipotezu.
@@ -410,6 +417,7 @@ Ispostavilo se da te tri stvari jedinstveno rješavaju problem: kritično podru�
 **Fisher** – izračunava vjerojatnosti da će nulta hipoteza biti odbačena
 
 **Neyman** – izračunava kritičke vrijednosti 
+
 
 ## Efekt veličine i snaga testa 
 

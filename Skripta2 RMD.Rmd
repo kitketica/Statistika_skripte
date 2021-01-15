@@ -3,8 +3,8 @@ title: "Skripta statistika 2. kolokvij"
 author: Lucija Ljubičić, Stela Frančić, Martina Videc, Lara Ožvat, Jasmina Kofjač
   i Katarina Handabaka
 output:
-  word_document: default
   html_document: default
+  word_document: default
 ---
 ## Kategorijalna analiza 
 
@@ -68,12 +68,14 @@ N – broj ljudi
 
 Pi – vjerojatnost svakog od izbora
 
-![slika1](Slika1.png)
+![formiranje vjerojatnosti](Slika1.png)
 
 
 Usporedimo očekivanu frekvenciju s podacima i napravimo razliku.
 
 Izračun:
+
+![izracun](Izracun1.png)
  
 - Oduzimanje očekivanih frekvencija od podataka
 
@@ -91,9 +93,8 @@ Računamo ih brojenjem brojeva različite kvantitete koji se koriste za opis na�
 **3.	Interpretacija rezultata**
 
 Prikaz kritičke regije za odbacivanje nulte hipoteze
-```{r}
-#slika
-```
+
+![interpretacija rezultata](Interpretacija rezultata.png)
 
 Možemo odbaciti Nul hipotezu koja glasi „Sve četiri karte su izabrane sa jednakom vjerojatnošću.“ jer vrijednost od 8,44 prelazi kritičku vrijednost od 7,81 (podaci su dovoljno nevjerojatni za odbacivanje). 
 
@@ -164,9 +165,7 @@ P_31 = P_32 (jednaka vjerojatnost izbora data)
 
 Formuliranje testne statistike (složeniji postupak)
 
-```{r}
-#Slika
-```
+![formula statističkog bloka](Statisticki_blok.png)
 
 _Stupnjevi slobode_
 
@@ -311,15 +310,13 @@ H1:μ≠67.5
 
 Grafički prikaz hipoteze:
 
-```{r}
-#slika
-```
+![snipp1](Snipp1.PNG)
+
 
 _Grafički prikaz podataka:_
 
-```{r}
-#snipp
-```
+![snipp2](Snipp2.PNG)
+
 
 P vrijednost iznosi 0.02384574 = 2,4% → Odbacujemo Nul hipotezu: prosjek studenata na sociologiji nije viši od prosjeka sudenata na fakuletu.
 
@@ -337,15 +334,11 @@ Koristi se kada nam je nepoznata standardna devijacija
 
 Grafički prikaz hipoteze:
 
-```{r}
-#snipp
-```
+![graf.prikaz](graf.prikaz snipp.PNG)
 
 Grafički prikaz distribucije:
 
-```{r}
-#snipp
-```
+![graf.prikaz3](Graf.prikaz3.PNG) 
 
 U t distribuciji repovi su deblji jer se SD pretpostavlja. Što je veći broj stupnjeva slobode, to je t distribucija sličnija normalnoj.
 
@@ -433,9 +426,7 @@ Realnija verzija usporedbe 2 prosjeka. Ne pretpostavlja homogenost varijance (ra
 
 2.	Nezavisnost
 
-```{r}
-#slika
-```
+![t-test](t-test3.png)
 
 Pretpostavljena je normalna distribucija kao i kod Studentovog testa, ali razlika je u tome što se kod alternativne hipoteze ne zahtjevaju jednake varijance (različite SD).
 
@@ -461,11 +452,11 @@ Provodi se u slučaju kada znamo smjer odnosa. Pretpostavlja se da je prosjek uz
 
 Predstavlja snagu procijenjenog odnosa. Mjera veličine razlike između dviju populacija ili veličine povezanosti među varijablama, a što je preklapanje veće, to je veličina uzorka manja. Ispituje koliko je fenomen rasprostranjen u N ili stupnju u kojem je Nul hipoteza netočna. Računa se pomoću Choenove d statistike.
 
-```{r}
-# 2 slike
-```
-
+![efekt.velicine formula](Efekt velicine1.png)
 d statistika pokazuje kolika je razlika između dva prosjeka izraženo u standardnim devijacijama
+
+![efekt.velicine.](efekt velicine.png)
+
 
 
 
@@ -535,10 +526,9 @@ H1:nije točno μP=μA=μJ
 
 Izračun varijance kod ANOVA-e
 
-```{r}
-#slike
-```
+![varijanca formula](Izracun varijance.png)
 
+![izracun varijance](izracun var2.png)
 Izračun ANOVA-e:
 
 -	Pregled podataka u tablici
@@ -564,9 +554,8 @@ P vrijednost iznosi 8,6% i stoga prihvaćamo Nul hipotezu.
 Za mjerenje efekta veličine najčešće se koristi η 2 (eta kvadrat).
 
 Formula:
-```{r}
-"slika"
-```
+
+![formula anova](Formula1.png)
  
 SSb – kvadrati odstupanja između grupa
 
