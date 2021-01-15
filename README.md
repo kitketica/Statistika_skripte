@@ -14,6 +14,6 @@ Ovaj repopzitorij sadrži materijale i skriptu za učenje koja prati kolegij iz 
 
 Radna verzija skripte je dostupna:
 
-1. [DIO](https://raw.githack.com/kitketica/Statistika_skripte/main/Skripta-stat.html)
+1. [DIO](https://raw.githack.com/kitketica/Statistika_skripte/main/R/Skripta-stat.html)
 
 2. [DIO](https://raw.githack.com/kitketica/Statistika_skripte/main/Skripta2-RMD.html)
